@@ -23,7 +23,7 @@
     "url": "https://github.com/my-vue/eslint-config-px/issues"
   },
   "homepage": "https://github.com/my-vue/eslint-config-px#readme",
-  "devDependencies": {
+  "peerDependencies": {
     "@rushstack/eslint-patch": "^1.2.0",
     "@vue/eslint-config-prettier": "^7.0.0",
     "@vue/eslint-config-typescript": "^11.0.2",

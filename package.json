@@ -1,0 +1,36 @@
+{
+  "name": "@memory13/eslint-config-px",
+  "version": "1.0.0",
+  "description": "vue3版本的eslint团队规范",
+  "main": "index.js",
+  "scripts": {
+    "lint": "eslint index.js --fix",
+    "patch": "npm version patch && git push --follow-tags && npm publish",
+    "minor": "npm version minor && git push --follow-tags && npm publish",
+    "major": "npm version major && git push --follow-tags && npm publish"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/my-vue/eslint-config-px.git"
+  },
+  "keywords": [
+    "vue3",
+    "eslint"
+  ],
+  "author": "memory",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/my-vue/eslint-config-px/issues"
+  },
+  "homepage": "https://github.com/my-vue/eslint-config-px#readme",
+  "devDependencies": {
+    "@rushstack/eslint-patch": "^1.2.0",
+    "@vue/eslint-config-prettier": "^7.0.0",
+    "@vue/eslint-config-typescript": "^11.0.2",
+    "cypress": "^11.2.0",
+    "eslint": "^8.28.0",
+    "eslint-plugin-cypress": "^2.12.1",
+    "eslint-plugin-vue": "^9.8.0",
+    "prettier": "^2.8.0"
+  }
+}

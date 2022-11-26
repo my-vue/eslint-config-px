@@ -1,2 +1,2 @@
 # eslint-config-px
-eslint团队规范
+vue3版本的eslint团队规范

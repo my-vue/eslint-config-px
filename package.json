@@ -1,6 +1,6 @@
 {
   "name": "@memory13/eslint-config-px",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "vue3版本的eslint团队规范",
   "main": "index.js",
   "scripts": {

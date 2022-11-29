@@ -103,7 +103,7 @@ module.exports = {
         'vue/no-undef-components': [
             'error',
             {
-                ignorePatterns: ['el(\\-\\w+)+', 'px(\\-\\w+)+', 'Router(\\-\\w+)+'],
+                ignorePatterns: ['el(\\-\\w+)+', 'px(\\-\\w+)+', 'RouterLink', 'RouterView'],
             },
         ],
         'vue/no-undef-properties': [

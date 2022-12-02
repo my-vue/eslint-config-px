@@ -76,7 +76,7 @@ module.exports = {
         //   "singleline": { "max": 3 },
         //   "multiline": { "max": 1 }
         // }],
-        'vue/block-lang': ['error', { script: { lang: 'ts' } }],
+        'vue/block-lang': ['error', { script: { lang: ['ts', 'tsx'] } }],
         'vue/component-api-style': [
             'error',
             ['script-setup'], // "script-setup", "composition", "composition-vue2", or "options"

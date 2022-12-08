@@ -17,6 +17,7 @@ module.exports = {
     },
     extends: [
         'eslint:recommended',
+        'plugin:import/recommended',
         'plugin:vue/vue3-essential',
         '@vue/eslint-config-typescript',
         '@vue/eslint-config-prettier',
@@ -91,6 +92,49 @@ module.exports = {
             { disallowTypeAnnotations: false },
         ],
         '@typescript-eslint/ban-ts-comment': ['off', { 'ts-ignore': false }],
+
+        // import
+        'import/first': 'error',
+        'import/no-duplicates': 'error',
+        'import/order': [
+            'error',
+            {
+                groups: [
+                    'builtin',
+                    'external',
+                    'internal',
+                    'parent',
+                    'sibling',
+                    'index',
+                    'object',
+                    'type',
+                ],
+
+                pathGroups: [
+                    {
+                        pattern: 'vue',
+                        group: 'external',
+                        position: 'before',
+                    },
+                    {
+                        pattern: '@vue/**',
+                        group: 'external',
+                        position: 'before',
+                    },
+                    {
+                        pattern: '@element-plus/**',
+                        group: 'internal',
+                    },
+                ],
+                pathGroupsExcludedImportTypes: ['type'],
+            },
+        ],
+        'import/no-unresolved': 'off',
+        'import/namespace': 'off',
+        'import/default': 'off',
+        'import/no-named-as-default': 'off',
+        'import/no-named-as-default-member': 'off',
+        'import/named': 'off',
 
         // vue
         'vue/no-v-html': 'off',

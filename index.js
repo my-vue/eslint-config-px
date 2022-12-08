@@ -1,5 +1,5 @@
 /* eslint-env node */
-require('@rushstack/eslint-patch/modern-module-resolution')
+require('@rushstack/eslint-patch/modern-module-resolution');
 
 module.exports = {
     root: true,
@@ -16,8 +16,8 @@ module.exports = {
         NodeJS: 'readonly',
     },
     extends: [
-        'plugin:vue/vue3-essential',
         'eslint:recommended',
+        'plugin:vue/vue3-essential',
         '@vue/eslint-config-typescript',
         '@vue/eslint-config-prettier',
     ],
@@ -31,27 +31,88 @@ module.exports = {
         ecmaVersion: 'latest',
     },
     rules: {
-        'prettier/prettier': [
+        'prettier/prettier': ['error', { semi: true, singleQuote: true }],
+
+        // js/ts
+        camelcase: ['error', { properties: 'never' }],
+        'no-console': ['warn', { allow: ['error'] }],
+        'no-debugger': 'warn',
+        'no-constant-condition': ['error', { checkLoops: false }],
+        'no-restricted-syntax': ['error', 'LabeledStatement', 'WithStatement'],
+        'no-return-await': 'error',
+        'no-var': 'error',
+        'no-empty': ['error', { allowEmptyCatch: true }],
+        'prefer-const': [
+            'warn',
+            { destructuring: 'all', ignoreReadBeforeAssign: true },
+        ],
+        'prefer-arrow-callback': [
             'error',
+            { allowNamedFunctions: false, allowUnboundThis: true },
+        ],
+        'object-shorthand': [
+            'error',
+            'always',
+            { ignoreConstructors: false, avoidQuotes: true },
+        ],
+        'prefer-rest-params': 'error',
+        'prefer-spread': 'error',
+        'prefer-template': 'error',
+        'no-redeclare': 'off',
+        '@typescript-eslint/no-redeclare': 'error',
+
+        // best practice
+        'array-callback-return': 'error',
+        'block-scoped-var': 'error',
+        'no-alert': 'warn',
+        'no-case-declarations': 'error',
+        'no-multi-str': 'error',
+        'no-with': 'error',
+        'no-void': 'error',
+        'sort-imports': [
+            'warn',
             {
-                printWidth: 120,
-                // 在语句末尾打印分号
-                semi: true,
-                // 使用单引号而不是双引号
-                singleQuote: true,
-                // 指定HTML文件的全局空格敏感度 css\strict\ignore
-                htmlWhitespaceSensitivity: 'ignore',
-                endOfLine: 'lf',
-                // 在单独的箭头函数参数周围包括括号 always：(x) => x \ avoid：x => x
-                arrowParens: 'avoid',
+                ignoreCase: false,
+                ignoreDeclarationSort: true,
+                ignoreMemberSort: false,
+                memberSyntaxSortOrder: ['none', 'all', 'multiple', 'single'],
+                allowSeparatedGroups: false,
             },
         ],
-        'no-var': 'error',
-        'prefer-const': 'error',
-        'no-alert': 'error',
+
+        // ts
         '@typescript-eslint/no-unused-vars': 'error',
-        '@typescript-eslint/no-explicit-any': 'off', // 关闭any类型的警告
+        '@typescript-eslint/explicit-module-boundary-types': 'off',
+        '@typescript-eslint/no-explicit-any': 'off',
+        '@typescript-eslint/no-non-null-assertion': 'off',
+        '@typescript-eslint/no-non-null-asserted-optional-chain': 'off',
+        '@typescript-eslint/consistent-type-imports': [
+            'error',
+            { disallowTypeAnnotations: false },
+        ],
+        '@typescript-eslint/ban-ts-comment': ['off', { 'ts-ignore': false }],
+
+        // vue
+        'vue/no-v-html': 'off',
+        'vue/require-default-prop': 'off',
+        'vue/require-explicit-emits': 'off',
         'vue/multi-word-component-names': 'off',
+        'vue/prefer-import-from-vue': 'off',
+        'vue/no-v-text-v-html-on-component': 'off',
+        'vue/html-self-closing': [
+            'error',
+            {
+                html: {
+                    void: 'always',
+                    normal: 'always',
+                    component: 'always',
+                },
+                svg: 'always',
+                math: 'always',
+            },
+        ],
+
+        // best practice
         'vue/no-unused-vars': [
             'error',
             {
@@ -103,7 +164,12 @@ module.exports = {
         'vue/no-undef-components': [
             'error',
             {
-                ignorePatterns: ['el(\\-\\w+)+', 'px(\\-\\w+)+', 'RouterLink', 'RouterView'],
+                ignorePatterns: [
+                    'el(\\-\\w+)+',
+                    'px(\\-\\w+)+',
+                    'RouterLink',
+                    'RouterView',
+                ],
             },
         ],
         'vue/no-undef-properties': [
@@ -121,7 +187,10 @@ module.exports = {
         ],
         'vue/no-unused-refs': 'error',
         'vue/padding-line-between-blocks': ['error', 'always'],
-        'vue/padding-line-between-tags': ['error', [{ blankLine: 'always', prev: '*', next: '*' }]],
+        'vue/padding-line-between-tags': [
+            'error',
+            [{ blankLine: 'always', prev: '*', next: '*' }],
+        ],
         'vue/prefer-prop-type-boolean-first': 'error',
         'vue/prefer-separate-static-class': 'error',
         'vue/prefer-true-attribute-shorthand': ['error', 'always'],
@@ -151,18 +220,6 @@ module.exports = {
             },
         ],
         'vue/prop-name-casing': ['error', 'camelCase'],
-        'vue/html-self-closing': [
-            'error',
-            {
-                html: {
-                    void: 'always',
-                    normal: 'always',
-                    component: 'always',
-                },
-                svg: 'always',
-                math: 'always',
-            },
-        ],
         'vue/html-closing-bracket-spacing': [
             'error',
             {
@@ -172,4 +229,4 @@ module.exports = {
             },
         ],
     },
-}
+};

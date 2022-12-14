@@ -3,37 +3,20 @@ require('@rushstack/eslint-patch/modern-module-resolution');
 
 module.exports = {
     root: true,
-    env: {
-        browser: true,
-        es2021: true,
-        node: true,
-    },
     globals: {
-        defineProps: 'readonly',
-        defineEmits: 'readonly',
-        defineExpose: 'readonly',
         defineOptions: 'readonly',
-        NodeJS: 'readonly',
     },
     extends: [
+        'plugin:vue/vue3-essential',
         'eslint:recommended',
         'plugin:import/recommended',
-        'plugin:vue/vue3-essential',
         '@vue/eslint-config-typescript',
         '@vue/eslint-config-prettier',
-    ],
-    overrides: [
-        {
-            files: ['cypress/e2e/**/*.{cy,spec}.{js,ts,jsx,tsx}'],
-            extends: ['plugin:cypress/recommended'],
-        },
     ],
     parserOptions: {
         ecmaVersion: 'latest',
     },
     rules: {
-        'prettier/prettier': ['error', { semi: true, singleQuote: true }],
-
         // js/ts
         camelcase: ['error', { properties: 'never' }],
         'no-console': ['warn', { allow: ['error'] }],

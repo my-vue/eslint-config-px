@@ -24,14 +24,17 @@
   },
   "homepage": "https://github.com/my-vue/eslint-config-px#readme",
   "peerDependencies": {
-    "@rushstack/eslint-patch": "^1.2.0",
+    "@rushstack/eslint-patch": "^1.1.4",
+    "@vitejs/plugin-vue": "^4.0.0",
+    "@vitejs/plugin-vue-jsx": "^3.0.0",
     "@vue/eslint-config-prettier": "^7.0.0",
-    "@vue/eslint-config-typescript": "^11.0.2",
-    "cypress": "^11.2.0",
-    "eslint": "^8.28.0",
+    "@vue/eslint-config-typescript": "^11.0.0",
+    "eslint": "^8.22.0",
     "eslint-plugin-cypress": "^2.12.1",
-    "eslint-plugin-vue": "^9.8.0",
     "eslint-plugin-import": "^2.26.0",
-    "prettier": "^2.8.0"
+    "eslint-plugin-vue": "^9.3.0",
+    "cypress": "^12.0.2",
+    "prettier": "^2.7.1",
+    "unplugin-vue-define-options": "^1.0.0"
   }
 }
